@@ -25,6 +25,8 @@ type config struct {
 	VersionInfo          string          `yaml:"-"` // For storing the version/build number
 	VersionNumber        string          `yaml:"-"`
 	VideoSettings        videoSettings   `yaml:"videoSettings"`
+	VoDLocation          string          `yaml:"vodLocation"`
+	VoDEnabled           bool            `yaml:"vodEnabled"`
 	WebServerPort        int             `yaml:"webServerPort"`
 	RTMPServerPort       int             `yaml:"rtmpServerPort"`
 	DisableUpgradeChecks bool            `yaml:"disableUpgradeChecks"`

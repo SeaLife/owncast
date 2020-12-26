@@ -6,8 +6,9 @@ import (
 	"fmt"
 	"regexp"
 	"strings"
+  "time"
 
-	"github.com/nareix/joy5/format/flv/flvio"
+  "github.com/nareix/joy5/format/flv/flvio"
 	"github.com/owncast/owncast/models"
 )
 
@@ -53,6 +54,18 @@ func getAudioCodec(codec interface{}) string {
 	}
 
 	return unknownString
+}
+
+func getCurrentTimeAsString() string {
+  t := time.Now()
+  return fmt.Sprintf("%d_%02d_%02d__%02d_%02d_%02d",
+      t.Year(),
+      t.Day(),
+      t.Month(),
+      t.Hour(),
+      t.Minute(),
+      t.Second(),
+    )
 }
 
 func getVideoCodec(codec interface{}) string {
